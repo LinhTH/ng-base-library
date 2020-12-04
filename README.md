@@ -31,5 +31,6 @@ Always declare them in `peerDependencies`
 
 ---
 ## TODO
-- [ ] integrate Cypress + Polly Js
 - [ ] integrate husky + commit lint
+- [ ] unit tests with Jest
+- [ ] e2e tests with Cypress + Polly Js
