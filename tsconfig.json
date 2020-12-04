@@ -19,11 +19,13 @@
       "dom"
     ],
     "paths": {
-      "base-lib": [
-        "dist/base-lib"
+      "@base/base-lib/*": [
+        "projects/base-lib/*",
+        "projects/base-lib"
       ],
-      "base-lib/*": [
-        "dist/base-lib/*"
+      "@base/base-lib": [
+        "dist/base-lib/*",
+        "dist/base-lib"
       ]
     }
   },
