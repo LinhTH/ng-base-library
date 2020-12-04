@@ -11,7 +11,9 @@
     },
     "import-blacklist": [
       true,
-      "rxjs/Rx"
+      "lodash",
+      "moment",
+      ["rxjs/(?!(operators|testing))", "@base/base-lib/(?!((testing|src))).*"]
     ],
     "interface-name": false,
     "max-classes-per-file": false,
