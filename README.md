@@ -16,3 +16,14 @@ ng g ng-samurai:generate-subentry feature-b --gm false --gc false
 The --gm and --gc flags stand for generate module and generate component respectively so depending on our feature we might want to generate default module and component but we might also skip them for service only sub-entries…
 
 ---
+
+4. Dependency graph with madge
+```shell script
+npm i -g madge
+madge projects/base-lib/src/public-api.ts --ts-config tsconfig.json --image graph.png
+```
+!! Must install Graphviz
+
+---
+5. Integrate 3rd dependencies
+Always declare them in `peerDependencies`
