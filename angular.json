@@ -37,6 +37,124 @@
           }
         }
       }
+    },
+    "base-lib-demo": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/base-lib-demo",
+      "sourceRoot": "projects/base-lib-demo/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/base-lib-demo",
+            "index": "projects/base-lib-demo/src/index.html",
+            "main": "projects/base-lib-demo/src/main.ts",
+            "polyfills": "projects/base-lib-demo/src/polyfills.ts",
+            "tsConfig": "projects/base-lib-demo/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/base-lib-demo/src/favicon.ico",
+              "projects/base-lib-demo/src/assets"
+            ],
+            "styles": [
+              "projects/base-lib-demo/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/base-lib-demo/src/environments/environment.ts",
+                  "with": "projects/base-lib-demo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "base-lib-demo:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "base-lib-demo:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "base-lib-demo:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/base-lib-demo/src/test.ts",
+            "polyfills": "projects/base-lib-demo/src/polyfills.ts",
+            "tsConfig": "projects/base-lib-demo/tsconfig.spec.json",
+            "karmaConfig": "projects/base-lib-demo/karma.conf.js",
+            "assets": [
+              "projects/base-lib-demo/src/favicon.ico",
+              "projects/base-lib-demo/src/assets"
+            ],
+            "styles": [
+              "projects/base-lib-demo/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/base-lib-demo/tsconfig.app.json",
+              "projects/base-lib-demo/tsconfig.spec.json",
+              "projects/base-lib-demo/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/base-lib-demo/e2e/protractor.conf.js",
+            "devServerTarget": "base-lib-demo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "base-lib-demo:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "base-lib"
 }

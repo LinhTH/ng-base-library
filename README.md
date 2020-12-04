@@ -27,3 +27,9 @@ madge projects/base-lib/src/public-api.ts --ts-config tsconfig.json --image grap
 ---
 5. Integrate 3rd dependencies
 Always declare them in `peerDependencies`
+
+
+---
+## TODO
+- [ ] integrate Cypress + Polly Js
+- [ ] integrate husky + commit lint
