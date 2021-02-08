@@ -1,0 +1,14 @@
+{
+  "baseUrl": "http://localhost:4200",
+  "viewportWidth": 1600,
+  "viewportHeight": 768,
+  "fileServerFolder": ".",
+  "fixturesFolder": "./fixtures",
+  "integrationFolder": "./integration",
+  "pluginsFile": "./plugins/index",
+  "supportFile": false,
+  "video": true,
+  "videosFolder": "../../../dist/e2e/videos",
+  "screenshotsFolder": "../../../dist/e2e/screenshots",
+  "chromeWebSecurity": false
+}
